@@ -1,71 +1,57 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Weather App</title>
-  <script src="index.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-  <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-
-  <form id="cityForm" action="">
-    <input type="text" placeholder="Enter city" id="city"/>
-    <input type="submit"/>
-  </form>
-
-  <h2>Today</h2>
-  <section id="today">
-    <table>
-      <tr>
-        <th >
-          Current Temperature
-        </th>
-        <th>
-          Low
-        </th>
-        <th>
-          High
-        </th>
-        <th>
-          Humidity
-        </th>
-        <th>
-          Cloud Cover
-        </th>
-      </tr>
-      <tr>
-        <td id="temp">
-
-        </td>
-        <td id="low">
-
-        </td>
-        <td id="high">
-
-        </td>
-        <td id="humidity">
-
-        </td>
-        <td id="cloudCover">
-
-        </td>
-        <td id="sunrise">
-
-        </td>
-        <td id="sunset">
-
-        </td>
-      </tr>
-    </table>
-  </section>
-
-  <!-- Optional -->
-  <canvas id="WeatherChart"></canvas>
-
-  <h2>Five Day Forcast</h2>
-  <aside>
-
-  </aside>
-
-
+    <h1>Weather Dashboard</h1>
+    
+    <form id="weather-form">
+        <input type="text" id="city-input" placeholder="Enter city name" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    
+    <div class="container">
+        <main>
+            <h2>Current Weather</h2>
+            <table id="current-weather">
+                <tr>
+                    <th>City</th>
+                    <td id="city-name"></td>
+                </tr>
+                <tr>
+                    <th>Temperature</th>
+                    <td id="temperature"></td>
+                </tr>
+                <tr>
+                    <th>Humidity</th>
+                    <td id="humidity"></td>
+                </tr>
+                <tr>
+                    <th>Conditions</th>
+                    <td id="conditions"></td>
+                </tr>
+                <tr>
+                    <th>Wind Speed</th>
+                    <td id="wind-speed"></td>
+                </tr>
+            </table>
+            
+            <div class="chart-container">
+                <canvas id="weather-chart"></canvas>
+            </div>
+        </main>
+        
+        <aside>
+            <h2>5-Day Forecast</h2>
+            <div id="forecast-container"></div>
+        </aside>
+    </div>
+    
+    <script src="/index.js"></script>
 </body>
 </html>
